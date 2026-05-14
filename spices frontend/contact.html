@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Us - IndoAroma Exports</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        🌿 IndoAroma Exports 🌍
+    </div>
+
+    <nav id="navbar"></nav>
+</header>
+
+<!-- ================= CONTACT SECTION ================= -->
+<section style="display:flex; justify-content:center; padding:40px 0;">
+
+    <div class="signup-container">
+
+        <h1>Contact Us 📞</h1>
+
+        <p class="subtitle">
+            We'd love to hear from you
+        </p>
+
+        <input type="text"
+               id="contactName"
+               placeholder="Full Name">
+
+        <div id="contactNameError"
+             class="error-text"></div>
+
+        <input type="text"
+               id="contactEmail"
+               placeholder="Email Address">
+
+        <div id="contactEmailError"
+             class="error-text"></div>
+
+        <textarea id="contactMessage"
+                  placeholder="Enter your message"
+                  rows="5"></textarea>
+
+        <div id="contactMessageError"
+             class="error-text"></div>
+
+        <button onclick="submitContact()">
+            Send Message
+        </button>
+
+    </div>
+
+</section>
+
+<footer>
+  <p>© 2026 IndoAroma Exports</p>
+</footer>
+
+<script src="script.js"></script>
+
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let message = document.getElementById("message").value.trim();
+
+    if (name === "") {
+        alert("Name is required!");
+        return;
+    }
+
+    if (email === "" || !email.includes("@")) {
+        alert("Enter a valid email!");
+        return;
+    }
+
+    if (message === "") {
+        alert("Message cannot be empty!");
+        return;
+    }
+
+    alert("Message sent successfully! ✅");
+
+    // Clear form
+    document.getElementById("contactForm").reset();
+});
+</script>
+
+</body>
+</html>

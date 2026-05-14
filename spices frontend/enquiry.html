@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Product Enquiry - IndoAroma Exports</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        🌿 IndoAroma Exports 🌍
+    </div>
+
+    <nav id="navbar"></nav>
+</header>
+
+<section style="display:flex; justify-content:center; padding:40px 0;">
+
+    <div class="signup-container">
+
+        <h1>Product Enquiry 📦</h1>
+
+        <p class="subtitle">
+            Send your spice requirement
+        </p>
+
+        <input type="text"
+               id="name"
+               placeholder="Full Name">
+
+        <div id="nameError" class="error-text"></div>
+
+        <input type="text"
+               id="email"
+               placeholder="Email Address">
+
+        <div id="emailError" class="error-text"></div>
+
+        <input type="text"
+               id="phone"
+               placeholder="Phone Number">
+
+        <div id="phoneError" class="error-text"></div>
+
+        <input type="text"
+               id="product"
+               placeholder="Product Name">
+
+        <div id="productError" class="error-text"></div>
+
+        <input type="text"
+               id="quantity"
+               placeholder="Quantity (kg)">
+
+        <div id="quantityError" class="error-text"></div>
+
+        <input type="text"
+               id="country"
+               placeholder="Destination Country">
+
+        <div id="countryError" class="error-text"></div>
+
+        <button onclick="submitEnquiry()">
+            Submit Enquiry
+        </button>
+
+    </div>
+
+</section>
+
+<p id="enquirySuccess" style="color:green; text-align:center;"></p>
+
+<footer>
+    <p>© 2026 IndoAroma Exports. All Rights Reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+
+<script>
+document.getElementById("enquiryForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    // Get values
+    let name = document.getElementById("ename").value.trim();
+    let email = document.getElementById("eemail").value.trim();
+    let phone = document.getElementById("ephone").value.trim();
+    let product = document.getElementById("product").value.trim();
+    let quantity = document.getElementById("quantity").value.trim();
+    let country = document.getElementById("country").value.trim();
+
+    // Reset errors
+    document.querySelectorAll(".error").forEach(e => e.innerText = "");
+
+    let valid = true;
+
+    if (name === "") {
+        document.getElementById("enameError").innerText = "Name is required";
+        valid = false;
+    }
+
+    if (email === "" || !email.includes("@")) {
+        document.getElementById("eemailError").innerText = "Valid email required";
+        valid = false;
+    }
+
+    if (phone === "" || phone.length < 10) {
+        document.getElementById("ephoneError").innerText = "Enter valid phone number";
+        valid = false;
+    }
+
+    if (product === "") {
+        document.getElementById("productError").innerText = "Product required";
+        valid = false;
+    }
+
+    if (quantity === "" || quantity <= 0) {
+        document.getElementById("quantityError").innerText = "Enter valid quantity";
+        valid = false;
+    }
+
+    if (country === "") {
+        document.getElementById("countryError").innerText = "Country required";
+        valid = false;
+    }
+
+    if (!valid) return;
+
+    // Success
+    document.getElementById("enquirySuccess").innerText =
+        "Enquiry submitted successfully! We will contact you soon.";
+
+    document.getElementById("enquiryForm").reset();
+});
+</script>
+
+</body>
+
+</html>

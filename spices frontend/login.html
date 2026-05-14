@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login - IndoAroma Exports</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        🌿 IndoAroma Exports 🌍
+    </div>
+
+    <nav id="navbar"></nav>
+</header>
+
+<!-- ================= LOGIN FORM ================= -->
+
+<section style="display:flex; justify-content:center; align-items:center; min-height:75vh;">
+
+    <div class="signup-container">
+
+        <h1>Login 🔐</h1>
+
+        <p class="subtitle">
+            Login as User or Admin
+        </p>
+
+        <input type="text"
+               id="username"
+               placeholder="Username">
+
+        <small id="loginUsernameError"></small>
+
+        <input type="password"
+               id="password"
+               placeholder="Password">
+
+        <small id="loginPasswordError"></small>
+
+        <div class="show-password">
+
+            <input type="checkbox"
+                   onclick="toggleLoginPassword()">
+
+            <label>Show Password</label>
+
+        </div>
+
+        <button onclick="login()">
+            Login
+        </button>
+
+        <p id="error"
+           style="color:red; margin-top:15px;">
+        </p>
+
+        <p class="bottom-text">
+            Don’t have an account?
+            <a href="signup.html">Signup</a>
+        </p>
+
+    </div>
+
+</section>
+
+<footer>
+    <p>© 2026 IndoAroma Exports. All Rights Reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>

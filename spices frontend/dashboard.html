@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<header>
+    <div class="logo">🌿 IndoAroma Exports 🌍</div>
+    <nav id="navbar"></nav>
+</header>
+
+<h1 style="text-align:center; margin-top:30px;">
+    👑 Admin Dashboard
+</h1>
+
+<div class="dashboard-container">
+
+    <div class="card" onclick="location.href='admin-orders.html'">
+        📦 Orders
+    </div>
+
+    <div class="card" onclick="location.href='admin-users.html'">
+        👤 Users
+    </div>
+
+    <div class="card" onclick="location.href='admin-enquiry.html'">
+        📩 Enquiries
+    </div>
+
+    <div class="card" onclick="location.href='admin-contact.html'">
+        📞 Contact Messages
+    </div>
+
+    <div class="card logout" onclick="logout()">
+        🚪 Logout
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
